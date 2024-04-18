@@ -1,10 +1,13 @@
+using ProjectAnimals.Controllers.DTOs;
 using ProjectAnimals.Models;
 
 namespace ProjectAnimals.Repositories;
 
-public class IAnimalRepository
+public interface IAnimalRepository
 {
-    IEnumerable<Animals> GetAnimals();
+    IEnumerable<Animals> GetAnimals(orderByCategories orderBy);
 
-    //void AddAnimal(AddAnimal animal);
+    void AddAnimal(AddAnimals animal);
+    void UpdateAnimal(UpdateAnimals animal,int id);
+    void RemoveAnimal(int id);
 }
